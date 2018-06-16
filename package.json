@@ -1,0 +1,21 @@
+{
+	"name": "opto",
+	"version": "1.0.0",
+	"description": "parse command line arguments for progam options",
+	"main": "dist/opto.cjs.js",
+	"module": "dist/opto.es6.js",
+	"license": "MIT",
+	"scripts": {
+		"test": "yarn buildCJS; tarsy test",
+		"setup": "mkdirp dist",
+		"build": "yarn setup; yarn buildCJS; yarn buildES6",
+		"buildCJS": "yarn setup; rollup src/opto.js --f cjs | uglifyjs -m -c > dist/opto.cjs.js",
+		"buildES6": "yarn setup; rollup src/opto.js --f es | uglifyjs -m -c > dist/opto.es6.js"
+	},
+	"devDependencies": {
+		"mkdirp": "^0.5.1",
+		"rollup": "^0.60.7",
+		"tarsy": "^0.5.2",
+		"uglify-es": "mishoo/UglifyJS2#harmony"
+	}
+}
