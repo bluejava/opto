@@ -9,6 +9,22 @@ Features:
 - detects numeric and boolean values and auto-casts
 - supports both double-dash `--` and single dash `-` options
 
+## Usage
+
+```bash
+npm install opto
+# or
+yarn add opto
+```
+
+Then, in your CLI app:
+
+```javascript
+const opto = require("opto")
+// ...
+const options = opto() // by default will grab process.argv
+```
+
 ## Multiple Value Options
 
 All options specified have a single value. If an option is used multiple times then it ALSO has `.multi` value with the array of values. So `-a one -a two -a three` will result in the following options object: `{ a: "three", "a.multi": ["one", "two", "three"]}`. 
