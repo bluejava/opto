@@ -1,6 +1,6 @@
 {
 	"name": "opto",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "parse command line arguments for progam options",
 	"main": "dist/opto.cjs.js",
 	"module": "dist/opto.es6.js",
